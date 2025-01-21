@@ -158,7 +158,7 @@ const SCREENS = {
 // Размер экрана
 const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
 
-// =============== ИНИЦИАЛИЗАЦИЯ MATER.JS (BULL ARENA) ===============
+
 const initArenaWorld = () => {
   const engine = Matter.Engine.create({ enableSleeping: false });
   engine.world.gravity.y = 0;
@@ -203,6 +203,7 @@ const BullRenderer = (props) => {
     <Image
       source={require('../assets/bull.png')} 
       style={{
+    
         position: 'absolute',
         left: x,
         top: y,
@@ -252,7 +253,7 @@ const MoveSystem = (entities, { time }) => {
   // Телепорт, если y < 0
   if (bull.body.position.y < 20) {
     Matter.Body.setPosition(bull.body, {
-      x: bull.body.position.x,
+      x: bull.body.position.x ,
       y: HEIGHT - 10,
     });
   }
@@ -679,52 +680,57 @@ export default function GamesOneFile() {
     };
 
     return (
-      <SafeAreaView style={styles.background}>
-        {/* Верхняя панель заменена на кнопку End, растянутую по ширине */}
-        <TouchableOpacity style={styles.menuButton} onPress={onEndGame}>
+      <SafeAreaView style={{ flex: 1,  backgroundColor: 'rgba(255, 248, 225, 1)', }}>
+        <View style={styles.back}>
+         <TouchableOpacity style={styles.menuButton} onPress={onEndGame}>
           <Text style={styles.menuButtonText}>END</Text>
         </TouchableOpacity>
-        <ImageBackground
-        source={require('../assets/bull_arena.jpg')} // замените путь на ваш файл с изображением
-        style={styles.gameBackground}
-        resizeMode="cover"
-      >
-        <GameEngine
-          ref={gameEngineRef}
-          style={styles.gameContainer}
-          systems={[MoveSystem, FlagSystem, ControlSystem]}
-          entities={arenaEntities}
-          running={running}
-          onUpdate={onUpdateEntitiesArena}
-        />
-      </ImageBackground>
+        </View>
     
-        {/* Если нужны кнопки управления (Left, Right, Dash, Slow) – оставляем их */}
-        <View style={styles.controlBar}>
-          <TouchableOpacity
-            style={styles.ctrlButton}
-            onPress={() => gameEngineRef.current?.dispatch({ type: 'left' })}
-          >
-            <Text style={styles.ctrlButtonText}>Left</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.ctrlButton}
-            onPress={() => gameEngineRef.current?.dispatch({ type: 'right' })}
-          >
-            <Text style={styles.ctrlButtonText}>Right</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.ctrlButton}
-            onPress={() => gameEngineRef.current?.dispatch({ type: 'dash' })}
-          >
-            <Text style={styles.ctrlButtonText}>Dash</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.ctrlButton}
-            onPress={() => gameEngineRef.current?.dispatch({ type: 'slow' })}
-          >
-            <Text style={styles.ctrlButtonText}>Slow</Text>
-          </TouchableOpacity>
+
+        <ImageBackground
+          source={require('../assets/bull_arena.jpg')}
+          style={styles.gameBackground}
+          resizeMode="cover"
+        >
+          <GameEngine
+            ref={gameEngineRef}
+            style={styles.gameContainer}
+            systems={[MoveSystem, FlagSystem, ControlSystem]}
+            entities={arenaEntities}
+            running={running}
+            onUpdate={onUpdateEntitiesArena}
+          />
+        </ImageBackground>
+    
+        {/* Контейнер для кнопок, растянутый на всю нижнюю часть */}
+        <View style={styles.controlBarContainer}>
+          <View style={styles.controlBar}>
+            <TouchableOpacity
+              style={styles.ctrlButton}
+              onPress={() => gameEngineRef.current?.dispatch({ type: 'left' })}
+            >
+              <Text style={styles.ctrlButtonText}>Left</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.ctrlButton}
+              onPress={() => gameEngineRef.current?.dispatch({ type: 'right' })}
+            >
+              <Text style={styles.ctrlButtonText}>Right</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.ctrlButton}
+              onPress={() => gameEngineRef.current?.dispatch({ type: 'dash' })}
+            >
+              <Text style={styles.ctrlButtonText}>Dash</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.ctrlButton}
+              onPress={() => gameEngineRef.current?.dispatch({ type: 'slow' })}
+            >
+              <Text style={styles.ctrlButtonText}>Slow</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -733,16 +739,48 @@ export default function GamesOneFile() {
   return null;
 }
 const styles = StyleSheet.create({
+  back:{
+    backgroundColor: 'rgba(255, 248, 225, 1)',
+  },
+  gameBackground: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  controlBarContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    // Задайте фон, который будет «перекрывать» нижнюю safe area:
+    backgroundColor: 'rgba(255, 248, 225, 1)',
+  },
+  controlBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+    marginTop:20,
+  },
+  ctrlButton: {
+    backgroundColor: 'rgba(209, 133, 133, 1)',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 6,
+    top:-20,
+  },
+  ctrlButtonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+  },
   backButton: {
     position: 'absolute',
-    top: 10,      // расстояние от верхней границы экрана
+    top: 50,      // расстояние от верхней границы экрана
     left: 10,     // расстояние от левой границы экрана
     
     padding: 10,  // можно подстроить отступы по необходимости
   },
   backButtonImage: {
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 60,
     resizeMode: 'contain',
   },
   infoBox: {
@@ -782,15 +820,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  gameBackground: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-
   background: {
     flex: 1,
     resizeMode: 'cover',
-    backgroundColor: 'rgba(255, 248, 225, 0.9)',
+    backgroundColor: 'rgba(255, 248, 225, 1)',
+
+
   },
   bg: {
     flex: 1,
@@ -876,24 +911,9 @@ const styles = StyleSheet.create({
     flex: 1,
   
   },
-  controlBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: 'rgba(255, 248, 225, 1)',
-    padding: 10,
-  },
-  ctrlButton: {
-    backgroundColor: 'rgba(209, 133, 133, 1)',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    borderRadius: 6,
-  },
-  ctrlButtonText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
+
   menuButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(209, 133, 133, 1)',
   
     marginVertical: 10,
     paddingVertical: 20,

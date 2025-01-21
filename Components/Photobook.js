@@ -186,7 +186,7 @@ const Photobook = ({ navigation }) => {
   folder: {
     width: folderWidth,
     height: folderWidth,
-    margin: 10,
+    margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(209, 133, 133, 0.4)',

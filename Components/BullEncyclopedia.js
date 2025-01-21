@@ -465,12 +465,12 @@ export default function BullEncyclopedia() {
   backButton: {
     position: 'absolute',
     left: 15,
-    top: 20,
+    top: 60,
     zIndex: 2,
   },
   backButtonImage: {
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     resizeMode: 'contain',
   },
   mainHeader: {

@@ -10,6 +10,7 @@ import {
   Modal,
   ImageBackground,
   Alert,
+  SafeAreaView
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useCoins } from './CoinContext'; // Ваш контекст для работы с монетами
@@ -68,17 +69,19 @@ const WallpapersScreen = () => {
 
   // Покупка обоев
   const handleBuy = (id, price) => {
-    if (userCoins >= price) {
+    if (coins >= price) {
       const updated = wallpapersState.map((wp) =>
         wp.id === id ? { ...wp, owned: true } : wp
       );
       setWallpapersState(updated);
-      setUserCoins(userCoins - price);
+      setCoins(coins - price);
       saveWallpapers(updated);
     } else {
       Alert.alert('Not enough coins!', 'You do not have enough coins to buy this wallpaper.');
     }
-  };// Запросить разрешение на доступ к фото (только iOS)
+  };
+
+  // Запросить разрешение на доступ к фото (только iOS)
   const requestPermission = async () => {
     try {
       const result = await check(PERMISSIONS.IOS.PHOTO_LIBRARY);
@@ -110,9 +113,7 @@ const WallpapersScreen = () => {
     if (!selectedWallpaper) {
       Alert.alert('No wallpaper selected', 'Please select a wallpaper to save.');
       return;
-    }
-
-    const hasPermission = await requestPermission();
+    }    const hasPermission = await requestPermission();
     if (!hasPermission) {
       return;
     }
@@ -182,60 +183,62 @@ const WallpapersScreen = () => {
         )}
       </View>
     </View>
-  );return (
+  );
+
+  return (
     <View style={styles.container}>
       <ImageBackground
         source={require('../assets/backimg.jpg')}
         style={styles.backgroundImage}
       >
-        {/* Кнопка "Back" + баланс монет */}
-        <View style={styles.topContainer}>
-          <TouchableOpacity
-            style={styles.backButton}
-            onPress={() => navigation.goBack()}
-          >
-            <Image
-              source={require('../assets/back_button.png')}
-              style={styles.backButtonImage}
-            />
-          </TouchableOpacity>
-          <View style={styles.coinContainer}>
-            <Image
-              source={require('../assets/coin.png')}
-              style={styles.coinIcon}
-            />
-            <Text style={styles.coinText}>{coins}</Text>
-          </View>
-        </View>
-
-        {/* Сетка обоев */}
-        <FlatList
-          data={wallpapersState}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={renderWallpaper}
-          numColumns={2}
-          contentContainerStyle={styles.listContent}
-        />
-
-        {/* Модальное окно полноэкранного просмотра */}
-        <Modal visible={!!selectedWallpaper} transparent={true}>
-          <View style={styles.modalContainer}>
-            {selectedWallpaper && (
-              <Image source={selectedWallpaper} style={styles.fullscreenImage} />
-            )}
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={styles.closeButton}
-                onPress={() => setSelectedWallpaper(null)}
-              >
-                <Text style={styles.closeButtonText}>Close</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.closeButton} onPress={handleDownload}>
-                <Text style={styles.closeButtonText}>Download</Text>
-              </TouchableOpacity>
+        <SafeAreaView style={styles.safeArea}>
+         
+          <View style={styles.topBar}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => navigation.goBack()}
+            >
+              <Image
+                source={require('../assets/back_button.png')}
+                style={styles.backButtonImage}
+              />
+            </TouchableOpacity>
+            <View style={styles.coinsWrapper}>
+              <Image
+                source={require('../assets/coin.png')}
+                style={styles.coinIcon}
+              />
+              <Text style={styles.coinText}>Points: {coins}</Text>
             </View>
           </View>
-        </Modal>
+
+         
+          <FlatList
+            data={wallpapersState}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={renderWallpaper}
+            numColumns={2}
+            contentContainerStyle={styles.listContent}
+          />        
+          <Modal visible={!!selectedWallpaper} transparent={true}>
+            <View style={styles.modalContainer}>
+              {selectedWallpaper && (
+                <Image source={selectedWallpaper} style={styles.fullscreenImage} />
+              )}
+              <View style={styles.modalButtons}>
+                <TouchableOpacity
+                  style={styles.closeButton}
+                  onPress={() => setSelectedWallpaper(null)}
+                >
+                  <Text style={styles.closeButtonText}>Close</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.closeButton} onPress={handleDownload}>
+                  <Text style={styles.closeButtonText}>Download</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+        </SafeAreaView>
       </ImageBackground>
     </View>
   );
@@ -247,45 +250,57 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  safeArea: {
+    flex: 1,
+  },
   backgroundImage: {
     flex: 1,
     opacity: 0.9,
   },
-  topContainer: {
+  topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 20,
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-    zIndex: 1,
+    alignItems: 'center',
+    paddingHorizontal: 15, // отступ по горизонтали
+    paddingTop: 10,
   },
   backButton: {
-    zIndex: 2,
+    // Дополнительные стили, если нужно
   },
   backButtonImage: {
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     resizeMode: 'contain',
   },
-  coinContainer: {
+  coinsWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+    borderWidth: 1,
+    borderColor: '#D4A373',
   },
   coinIcon: {
-    width: 20,
-    height: 20,
+    width: 30,
+    height: 30,
     resizeMode: 'contain',
+    marginRight: 5,
   },
   coinText: {
-    color: '#fff',
+    fontSize: 18,
     fontWeight: 'bold',
-    fontSize: 16,
-    marginLeft: 5,
+    color: '#4E342E',
   },
   listContent: {
     padding: 10,
-    marginTop: 70, // чтобы не налезало на верхний бар
+    marginTop: 10, // чтобы не накладываться на верхний бар
   },
   wallpaperContainer: {
     flex: 1,
@@ -295,14 +310,12 @@ const styles = StyleSheet.create({
   wallpaper: {
     width: width * 0.4,
     height: height * 0.25,
-    borderRadius: 10,
+    borderRadius: 40,
   },
   transparentImage: {
-    // имитация ч/б или затемнения (можно использовать любую стилизацию)
     opacity: 0.7,
   },
   selectedWallpaper: {
-    // дополнительная стилизация выбранного элемента
     opacity: 0.6,
   },
   imageWrapper: {
@@ -311,10 +324,10 @@ const styles = StyleSheet.create({
   },
   lockIcon: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    width: 30,
-    height: 30,
+    top: 35,
+    right: 4,
+    width: 40,
+    height: 40,
   },
   infoContainer: {
     marginTop: 10,
@@ -354,7 +367,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 20,
   },
-  closeButton: {backgroundColor: '#FF7043',
+  closeButton: {
+    backgroundColor: '#FF7043',
     padding: 10,
     borderRadius: 5,
   },

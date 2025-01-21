@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useCoins } from './CoinContext';
+import { SafeAreaFrameContext, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function MainMenuScreen() {
   const navigation = useNavigation();
@@ -89,7 +90,8 @@ export default function MainMenuScreen() {
         </View>
       </Modal>
 
-      <View style={styles.topRow}>
+      <SafeAreaView style={styles.topRow}>
+        
         <View style={styles.coinsContainer}>
           <Image
             source={require('../assets/coin.png')}
@@ -104,7 +106,7 @@ export default function MainMenuScreen() {
         >
           <Text style={styles.settingsButtonText}>Settings</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
 
       
       <ScrollView contentContainerStyle={styles.menuContainer}>
@@ -166,7 +168,7 @@ export default function MainMenuScreen() {
   },
   topRow: {
     flexDirection: 'row',
-    marginTop: 50,
+    marginTop: 20,
     marginHorizontal: 20,
     justifyContent: 'space-between',
   },
