@@ -593,7 +593,7 @@ export default function BullEncyclopedia() {
     fontWeight: '800',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#4E342E',
+    color: '#FFF',
   },
   input: {
     backgroundColor: 'rgba(255, 255, 240, 0.8)',
