@@ -56,7 +56,7 @@ const Loader = ({ onEnd }) => {
             { opacity: appearingAnim }, 
           ]}
         >
-        Bull Master
+        Bull Master Quest
         </Animated.Text>
       </Animated.View>
     </ImageBackground>
