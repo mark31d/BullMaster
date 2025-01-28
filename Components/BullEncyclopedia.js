@@ -457,7 +457,8 @@ export default function BullEncyclopedia() {
       </SafeAreaView>
     </ImageBackground>
   );
-}const styles = StyleSheet.create({
+}
+const styles = StyleSheet.create({
   background: {
     flex: 1,
     resizeMode: 'cover',
@@ -478,7 +479,7 @@ export default function BullEncyclopedia() {
     fontSize: 26,
     fontWeight: '700',
     marginTop: 60,
-    color: '#4E342E',
+    color: '#5B4A3D', // Темный песочный
   },
   container: {
     flex: 1,
@@ -490,12 +491,12 @@ export default function BullEncyclopedia() {
   listItem: {
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: 'rgba(245, 222, 179, 0.9)',
+    backgroundColor: 'rgba(210, 230, 200, 0.9)', // Бледно-зеленый
     marginBottom: 8,
     padding: 10,
     borderRadius: 8,
     borderWidth: 2,
-    borderColor: '#A0522D',
+    borderColor: '#AABB97',
   },
   thumbImage: {
     width: 300,
@@ -507,7 +508,7 @@ export default function BullEncyclopedia() {
     fontSize: 20,
     padding: 5,
     fontWeight: '700',
-    color: '#4E342E',
+    color: '#5B4A3D', // Темный песочный
   },
   headerImage: {
     borderRadius: 25,
@@ -522,7 +523,7 @@ export default function BullEncyclopedia() {
     fontWeight: '800',
     margin: 15,
     textAlign: 'center',
-    color: '#4E342E',
+    color: '#5B4A3D', // Темный песочный
   },
   buttonsRow: {
     flexDirection: 'row',
@@ -530,7 +531,7 @@ export default function BullEncyclopedia() {
     marginBottom: 10,
   },
   menuButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     marginVertical: 10,
     paddingVertical: 15,
     paddingHorizontal: 10,
@@ -542,16 +543,16 @@ export default function BullEncyclopedia() {
     elevation: 5,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#A0522D',
+    borderColor: '#8B5E3C',
   },
   menuButtonText: {
     fontWeight: 'bold',
     fontSize: 16,
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
   },
   textBlock: {
-    backgroundColor: 'rgba(255, 255, 240, 0.8)',
-    borderColor: '#A0522D',
+    backgroundColor: 'rgba(245, 234, 216, 0.8)', // Светлый песочно-кремовый
+    borderColor: '#AABB97',
     borderWidth: 2,
     borderRadius: 10,
     marginHorizontal: 15,
@@ -561,7 +562,7 @@ export default function BullEncyclopedia() {
   subtitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#4E342E',
+    color: '#5B4A3D', // Темный песочный
     marginBottom: 4,
   },
   description: {
@@ -570,20 +571,19 @@ export default function BullEncyclopedia() {
     color: '#333',
   },
   addButton: {
-    backgroundColor: '#4E342E',
+    backgroundColor: '#8A705E', // Теплый коричнево-зеленый
     margin: 15,
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
   },
   addButtonText: {
-    color: '#FFF',
+    color: '#F6F1E9', // Кремовый белый
     fontWeight: 'bold',
     fontSize: 16,
   },
   modalContainer: {
     flex: 1,
-    
   },
   modalContent: {
     padding: 20,
@@ -593,12 +593,12 @@ export default function BullEncyclopedia() {
     fontWeight: '800',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#FFF',
+    color: '#5B4A3D', // Темный песочный
   },
   input: {
-    backgroundColor: 'rgba(255, 255, 240, 0.8)',
+    backgroundColor: 'rgba(245, 234, 216, 0.8)', // Светлый песочно-кремовый
     borderWidth: 1,
-    borderColor: '#A0522D',
+    borderColor: '#AABB97',
     borderRadius: 8,
     marginVertical: 10,
     paddingHorizontal: 10,

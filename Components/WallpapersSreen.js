@@ -245,7 +245,6 @@ const WallpapersScreen = () => {
 };
 
 export default WallpapersScreen;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -261,7 +260,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 15, // отступ по горизонтали
+    paddingHorizontal: 15,
     paddingTop: 10,
   },
   backButton: {
@@ -275,7 +274,7 @@ const styles = StyleSheet.create({
   coinsWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    backgroundColor: 'rgba(210, 230, 200, 0.8)', // Бледно-зеленый
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 15,
@@ -285,7 +284,7 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
     borderWidth: 1,
-    borderColor: '#D4A373',
+    borderColor: '#AABB97',
   },
   coinIcon: {
     width: 30,
@@ -296,11 +295,11 @@ const styles = StyleSheet.create({
   coinText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#4E342E',
+    color: '#5B4A3D', // Темный песочный
   },
   listContent: {
     padding: 10,
-    marginTop: 10, // чтобы не накладываться на верхний бар
+    marginTop: 10,
   },
   wallpaperContainer: {
     flex: 1,
@@ -311,6 +310,7 @@ const styles = StyleSheet.create({
     width: width * 0.4,
     height: height * 0.25,
     borderRadius: 40,
+    backgroundColor: '#D9CBB5', // Светлый песочный
   },
   transparentImage: {
     opacity: 0.7,
@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buyButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#8A705E', // Теплый коричнево-зеленый
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderRadius: 5,
@@ -342,12 +342,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buyButtonText: {
-    color: '#fff',
+    color: '#F6F1E9', // Светлый кремовый
     fontWeight: 'bold',
     fontSize: 14,
   },
   ownedText: {
-    color: '#4CAF50',
+    color: '#8A705E', // Теплый коричнево-зеленый
     fontWeight: 'bold',
     fontSize: 16,
   },
@@ -368,12 +368,12 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   closeButton: {
-    backgroundColor: '#FF7043',
+    backgroundColor: '#C87B6E', // Приглушенный красновато-коричневый
     padding: 10,
     borderRadius: 5,
   },
   closeButtonText: {
-    color: '#fff',
+    color: '#F6F1E9', // Светлый кремовый
     fontWeight: 'bold',
   },
 });

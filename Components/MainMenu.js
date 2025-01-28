@@ -155,7 +155,9 @@ export default function MainMenuScreen() {
       </ScrollView>
     </ImageBackground>
   );
-}const styles = StyleSheet.create({
+}
+
+const styles = StyleSheet.create({
   coinImage: {
     width: 20,
     height: 20,
@@ -175,7 +177,7 @@ export default function MainMenuScreen() {
   coinsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    backgroundColor: 'rgba(231, 214, 191, 0.8)',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 15,
@@ -185,17 +187,17 @@ export default function MainMenuScreen() {
     shadowRadius: 5,
     elevation: 5,
     borderWidth: 1,
-    borderColor: '#D4A373',
+    borderColor: '#C4A484',
   },
   coinsText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#4E342E',
+    color: '#5B4B3F',
   },
   settingsButton: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    backgroundColor: 'rgba(231, 214, 191, 0.8)',
     borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -203,12 +205,12 @@ export default function MainMenuScreen() {
     shadowRadius: 5,
     elevation: 5,
     borderWidth: 1,
-    borderColor: '#D4A373',
+    borderColor: '#C4A484',
   },
   settingsButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#4E342E',
+    color: '#5B4B3F',
   },
   menuContainer: {
     flexGrow: 1,
@@ -216,9 +218,8 @@ export default function MainMenuScreen() {
     paddingHorizontal: 20,
     paddingBottom: 20,
   },
- 
   verticalButton: {
-    backgroundColor: '#4e342e',
+    backgroundColor: '#7C6656',
     marginVertical: 10,
     paddingVertical: 30,
     borderRadius: 20,
@@ -229,15 +230,15 @@ export default function MainMenuScreen() {
     elevation: 5,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#D4A373',
+    borderColor: '#B29985',
   },
   verticalButtonText: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#FFF8E1',
+    color: '#F6E8D6',
   },
   menuButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)',
     marginVertical: 8,
     paddingVertical: 15,
     borderRadius: 15,
@@ -248,21 +249,21 @@ export default function MainMenuScreen() {
     elevation: 5,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#A0522D',
+    borderColor: '#8B5E3C',
   },
   menuButtonText: {
     fontWeight: 'bold',
     fontSize: 18,
-    color: '#FFF',
+    color: '#FAF3EB',
   },
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
   modalContainer: {
-    backgroundColor: 'rgba(255, 248, 225, 0.9)',
+    backgroundColor: 'rgba(245, 234, 216, 0.9)',
     borderRadius: 20,
     padding: 20,
     elevation: 10,
@@ -271,25 +272,25 @@ export default function MainMenuScreen() {
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#6B4226',
+    color: '#704F37',
   },
   modalText: {
     fontSize: 18,
     marginBottom: 20,
-    color: '#4E342E',
+    color: '#5B4B3F',
   },
   centerText: {
     textAlign: 'center',
   },
   customButton: {
-    backgroundColor: '#4e342e',
+    backgroundColor: '#7C6656',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
     alignSelf: 'center',
   },
   customButtonText: {
-    color: '#FFF8E1',
+    color: '#F6E8D6',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',

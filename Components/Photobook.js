@@ -173,7 +173,8 @@ const Photobook = ({ navigation }) => {
       </SafeAreaView>
     </ImageBackground>
   );
-};const styles = StyleSheet.create({
+};
+const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
@@ -181,7 +182,6 @@ const Photobook = ({ navigation }) => {
   container: {
     flex: 1,
     padding: screenWidth * 0.05,
-   
   },
   folder: {
     width: folderWidth,
@@ -189,7 +189,7 @@ const Photobook = ({ navigation }) => {
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(209, 133, 133, 0.4)',
+    backgroundColor: 'rgba(196, 153, 133, 0.4)', // Приглушенный терракотовый
     borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -208,7 +208,7 @@ const Photobook = ({ navigation }) => {
   },
   folderText: {
     fontSize: screenWidth * 0.06,
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 5,
@@ -224,7 +224,7 @@ const Photobook = ({ navigation }) => {
     paddingVertical: 15,
   },
   button: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)', // тот же красновато-коричневый оттенок, как и в GameScreen
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     borderRadius: 15,
     paddingVertical: 20,
     paddingHorizontal: 20,
@@ -239,7 +239,7 @@ const Photobook = ({ navigation }) => {
     elevation: 5,
   },
   buttonText: {
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -248,36 +248,36 @@ const Photobook = ({ navigation }) => {
     top: '30%',
     left: '10%',
     right: '10%',
-    backgroundColor: 'rgba(255, 248, 225, 0.9)',
+    backgroundColor: 'rgba(245, 234, 216, 0.9)', // Светло-песочный
     padding: screenHeight * 0.02,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: 'rgba(209, 133, 133, 0.8)',
+    borderColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
   },
   modalText: {
     fontSize: screenWidth * 0.05,
-    color: 'rgba(209, 133, 133, 0.8)',
+    color: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     marginBottom: screenHeight * 0.02,
     textAlign: 'center',
   },
   input: {
     height: screenHeight * 0.06,
-    borderColor: 'rgba(209, 133, 133, 0.8)',
+    borderColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     borderWidth: 1,
     borderRadius: 5,
-    color: 'rgba(209, 133, 133, 0.8)',
+    color: 'rgba(85, 139, 47, 0.8)', // Бледно-зеленый
     paddingHorizontal: screenWidth * 0.03,
     marginBottom: screenHeight * 0.02,
   },
   modalButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     padding: screenHeight * 0.02,
     borderRadius: 5,
     alignItems: 'center',
   },
   modalButtonText: {
     fontSize: screenWidth * 0.05,
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontWeight: 'bold',
   },
   roundedImage: {
@@ -286,17 +286,17 @@ const Photobook = ({ navigation }) => {
     margin: 9,
     borderRadius: 20,
     borderWidth: 2,
-    borderColor: 'rgba(209, 133, 133, 0.8)',
+    borderColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
   },
   noImagesText: {
     marginTop: screenHeight * 0.4,
     marginBottom: screenHeight * 0.08,
     alignSelf: 'center',
     fontSize: screenWidth * 0.08,
-    color: '#FFF',
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
-    padding:10,
-    borderRadius:10,
+    color: '#FAF3EB', // Кремовый белый
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
+    padding: 10,
+    borderRadius: 10,
   },
 });
 

@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     textAlign: 'center',
     fontSize: 60,
-    color: '#D4A373',
+    color: 'rgba(245, 234, 216, 1)',
   },
 });
 

@@ -226,8 +226,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: screenWidth * 0.07, // Немного меньше заголовка
-    color: '#FFF',
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    color: '#FAF3EB', // Кремовый белый
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     padding: 8,
     borderRadius: 10,
     marginBottom: 10,
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   zoomButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -260,11 +260,11 @@ const styles = StyleSheet.create({
   },
   zoomButtonText: {
     fontSize: 24,
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontWeight: 'bold',
   },
   backButton: {
-    backgroundColor: '#4e342e',
+    backgroundColor: '#8A705E', // Теплый коричнево-зеленый
     paddingHorizontal: 25,
     paddingVertical: 12,
     borderRadius: 15,
@@ -272,9 +272,10 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 18,
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontWeight: 'bold',
     textAlign: 'center',
   },
 });
+
 export default MapScreen;

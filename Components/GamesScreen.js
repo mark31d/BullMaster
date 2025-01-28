@@ -739,8 +739,8 @@ export default function GamesOneFile() {
   return null;
 }
 const styles = StyleSheet.create({
-  back:{
-    backgroundColor: 'rgba(255, 248, 225, 1)',
+  back: {
+    backgroundColor: 'rgba(245, 234, 216, 1)', // Бледно-зеленый
   },
   gameBackground: {
     flex: 1,
@@ -751,32 +751,30 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    // Задайте фон, который будет «перекрывать» нижнюю safe area:
-    backgroundColor: 'rgba(255, 248, 225, 1)',
+    backgroundColor: 'rgba(245, 234, 216, 1)', // Светло-песочный
   },
   controlBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     padding: 10,
-    marginTop:20,
+    marginTop: 20,
   },
   ctrlButton: {
-    backgroundColor: 'rgba(209, 133, 133, 1)',
+    backgroundColor: 'rgba(196, 153, 133, 1)', // Приглушенный терракотовый
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 6,
-    top:-20,
+    top: -20,
   },
   ctrlButtonText: {
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontWeight: 'bold',
   },
   backButton: {
     position: 'absolute',
-    top: 50,      // расстояние от верхней границы экрана
-    left: 10,     // расстояние от левой границы экрана
-    
-    padding: 10,  // можно подстроить отступы по необходимости
+    top: 50,
+    left: 10,
+    padding: 10,
   },
   backButtonImage: {
     width: 50,
@@ -784,28 +782,28 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   infoBox: {
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    backgroundColor: 'rgba(245, 234, 216, 0.8)', // Светло-песочный
     padding: 15,
     borderRadius: 10,
     marginBottom: 15,
     width: '80%',
     alignItems: 'center',
-    alignSelf:'center',
+    alignSelf: 'center',
     borderWidth: 2,
-    borderColor: '#D4A373', // Коричнево-золотистый бордер
+    borderColor: '#AABB97', // Светлый зеленый бордер
   },
   coinsBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
+    backgroundColor: 'rgba(245, 234, 216, 0.8)', // Светло-песочный
     padding: 15,
     borderRadius: 10,
     marginBottom: 20,
     width: '80%',
     justifyContent: 'center',
-    alignSelf:'center',
+    alignSelf: 'center',
     borderWidth: 2,
-    borderColor: '#D4A373',
+    borderColor: '#AABB97', // Светлый зеленый бордер
   },
   coinImage: {
     width: 30,
@@ -814,18 +812,15 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   infoText: {
-    color: '#4E342E',
+    color: '#5B4A3D', // Темно-песочный
     fontSize: 20,
-    fontWeight:'bold',
+    fontWeight: 'bold',
     textAlign: 'center',
   },
-
   background: {
     flex: 1,
     resizeMode: 'cover',
-    backgroundColor: 'rgba(255, 248, 225, 1)',
-
-
+    backgroundColor: 'rgba(210, 230, 200, 1)', // Бледно-зеленый
   },
   bg: {
     flex: 1,
@@ -834,87 +829,74 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 12,
-    marginTop:150,
+    marginTop: 150,
   },
   containerr: {
     flex: 1,
     padding: 12,
-    marginTop:10,
+    marginTop: 10,
   },
   center: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   header: {
-    color: '#4E342E',
+    color: '#5B4A3D', // Темно-песочный
     fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 15,
   },
   question: {
-    color: '#4E342E',
+    color: '#5B4A3D', // Темно-песочный
     fontSize: 18,
     textAlign: 'center',
     marginVertical: 10,
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
-    paddingVertical:10,
-    paddingHorizontal:10,
-
+    backgroundColor: 'rgba(245, 234, 216, 0.8)', // Светло-песочный
+    paddingVertical: 10,
+    paddingHorizontal: 10,
     borderRadius: 10,
     marginBottom: 15,
     width: '100%',
     alignItems: 'center',
-    alignSelf:'center',
+    alignSelf: 'center',
     borderWidth: 2,
-    borderColor: '#D4A373',
+    borderColor: '#AABB97', // Светлый зеленый бордер
   },
-  
   button: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     padding: 12,
     marginVertical: 15,
     borderRadius: 15,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#A0522D',
+    borderColor: '#8B5E3C', // Темно-коричневый
     paddingVertical: 20,
   },
   buttonText: {
-    color: '#FFF',
+    color: '#FAF3EB', // Кремовый белый
     fontSize: 20,
     fontWeight: '800',
-    
   },
   answerButton: {
-    backgroundColor: 'rgba(209, 133, 133, 0.8)',
+    backgroundColor: 'rgba(196, 153, 133, 0.8)', // Приглушенный терракотовый
     padding: 12,
     marginVertical: 5,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: '#A0522D',
+    borderColor: '#8B5E3C',
     width: '100%',
-    alignSelf:'center',
-    alignItems:'center',
-
+    alignSelf: 'center',
+    alignItems: 'center',
   },
-  // Подсветка правильного варианта
   correct: {
-    backgroundColor: 'rgba(0, 128, 0, 0.6)', // зеленый полупрозрачный
+    backgroundColor: 'rgba(85, 139, 47, 0.6)', // Зеленый полупрозрачный
   },
-  // Подсветка неправильного варианта
   incorrect: {
-    backgroundColor: 'rgba(255, 0, 0, 0.6)', // красный полупрозрачный
+    backgroundColor: 'rgba(209, 76, 76, 0.6)', // Красный полупрозрачный
   },
-  // Игровой контейнер (если нужно для другой части приложения)
-  gameContainer: {
-    flex: 1,
-  
-  },
-
   menuButton: {
-    backgroundColor: 'rgba(209, 133, 133, 1)',
-  
+    backgroundColor: 'rgba(196, 153, 133, 1)', // Приглушенный терракотовый
     marginVertical: 10,
     paddingVertical: 20,
     borderRadius: 15,
@@ -925,101 +907,12 @@ const styles = StyleSheet.create({
     elevation: 5,
     alignItems: 'center',
     borderWidth: 1,
-    alignSelf:'center',
-    borderColor: '#A0522D',
+    alignSelf: 'center',
+    borderColor: '#8B5E3C', // Темно-коричневый
     width: '90%',
   },
   menuButtonText: {
     fontWeight: 'bold',
-    fontSize: 20,
-    color: '#FFF',
-  },
-  topRow: {
-    flexDirection: 'row',
-    marginTop: 50,
-    marginHorizontal: 20,
-    justifyContent: 'space-between',
-  },
-  coinsContainer: {
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 5,
-    borderWidth: 1,
-    borderColor: '#D4A373',
-  },
-  coinsText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#4E342E',
-  },
-  settingsButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    backgroundColor: 'rgba(255, 223, 186, 0.8)',
-    borderRadius: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 5,
-    borderWidth: 1,
-    borderColor: '#D4A373',
-  },
-  settingsButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#4E342E',
-  },
-  menuContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-  },
-  verticalButton: {
-    backgroundColor: 'rgba(85, 139, 47, 0.8)',
-    marginVertical: 15,
-    paddingVertical: 50,
-    borderRadius: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 5,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#6B8E23',
-  },
-  verticalButtonText: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    color: '#FFF8E1',
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-  },
-  modalContainer: {
-    backgroundColor: 'rgba(255, 248, 225, 0.9)',
-    borderRadius: 20,
-    padding: 20,
-    elevation: 10,
-  },
-  modalTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#6B4226',
-  },
-  modalText: {
-    fontSize: 18,marginBottom: 20,
-    color: '#4E342E',
+    fontSize: 20,color: '#FAF3EB', // Кремовый белый
   },
 });

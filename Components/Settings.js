@@ -97,10 +97,10 @@ const Settings = ({ navigation }) => {
       </SafeAreaView>
     </ImageBackground>
   );
-};const styles = StyleSheet.create({
+};
+const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    
   },
   backgroundImage: {
     flex: 1,
@@ -114,7 +114,7 @@ const Settings = ({ navigation }) => {
     fontSize: width * 0.07,
     fontWeight: 'bold',
     marginBottom: height * 0.03,
-    color: '#D4A373', // Яркий золотистый цвет
+    color: '#A67B5B', // Нежный оттенок терракоты
     textAlign: 'center',
   },
   setting: {
@@ -124,8 +124,8 @@ const Settings = ({ navigation }) => {
     marginVertical: height * 0.02,
     padding: height * 0.02,
     borderRadius: 15,
-    backgroundColor: '#D4A373', // Светло-золотистый
-    borderColor: '#333',
+    backgroundColor: '#D9CBB5', // Светлый песочно-зеленый
+    borderColor: '#8A705E',
     borderWidth: 1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
@@ -135,7 +135,7 @@ const Settings = ({ navigation }) => {
   },
   settingText: {
     fontSize: width * 0.05,
-    color: '#FFFFFF', // Белый цвет текста
+    color: '#5C4A3D', // Темный песочный цвет
     flex: 1,
   },
   volumeControls: {
@@ -147,7 +147,7 @@ const Settings = ({ navigation }) => {
     height: height * 0.06,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4E342E', // Темно-коричневый для кнопок
+    backgroundColor: '#8A705E', // Теплый коричнево-зеленый
     borderRadius: 10,
     marginHorizontal: width * 0.02,
     shadowColor: '#000',
@@ -158,11 +158,11 @@ const Settings = ({ navigation }) => {
   },
   buttonText: {
     fontSize: width * 0.06,
-    color: '#FFFFFF', // Белый цвет текста
+    color: '#F6F1E9', // Светлый кремовый для текста
   },
   resetButton: {
     marginTop: height * 0.03,
-    backgroundColor: '#D32F2F', // Красный для сброса очков
+    backgroundColor: '#C87B6E', // Приглушенный красновато-коричневый
     borderRadius: 10,
     paddingVertical: height * 0.02,
     alignItems: 'center',
@@ -175,11 +175,11 @@ const Settings = ({ navigation }) => {
   resetButtonText: {
     fontWeight: 'bold',
     fontSize: width * 0.05,
-    color: '#FFFFFF', // Белый текст
+    color: '#F6F1E9', // Светлый кремовый для текста
   },
   exitButton: {
     marginTop: height * 0.03,
-    backgroundColor: '#D4A373', // Зеленый для кнопки возврата
+    backgroundColor: '#B7C3A6', // Бледно-зеленый
     borderRadius: 10,
     paddingVertical: height * 0.02,
     alignItems: 'center',
@@ -192,7 +192,7 @@ const Settings = ({ navigation }) => {
   exitButtonText: {
     fontWeight: 'bold',
     fontSize: width * 0.05,
-    color: '#FFFFFF', // Белый текст
+    color: '#5C4A3D', // Темный песочный цвет
   },
 });
 
